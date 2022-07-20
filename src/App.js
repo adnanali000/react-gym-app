@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import ExerciseDetail from './pages/ExerciseDetail'
+import './App.css'
 
 const App = () => {
   return (
