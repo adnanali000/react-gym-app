@@ -1,14 +1,17 @@
 import React from 'react'
 import {Stack} from '@mui/material'
 import Logo from '../assets/images/Logo.png'
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
+
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <Stack 
       direction="row" 
       justifyContent="space-around"
-      sx={{ gap: {sm: '122px' , xs: '40px'}, mt: {sm: '32px',xs: '20px'}, justifyContent: 'none'}}
+      sx={{ gap: {sm: '122px' , xs: '40px'}, mt: {sm: '32px',xs: '20px'}, justifyContent: 'none',alignItems:'center'}}
       px="20px"
     >
       <Link to="/">
@@ -21,7 +24,7 @@ const Navbar = () => {
         fontSize="24px"
       >
         <Link to="/" style={{ textDecoration: 'none', borderBottom: '2px solid #FF2625', color: '#3A1212'}}>Home</Link>
-        <a href="#exercise" style={{ textDecoration: 'none', color: '#3A1212'}}>Exercises</a>
+        <a href="#exercise" style={{ textDecoration: 'none', color: '#3A1212'}}>{location.pathname === '/' && 'Exercises'}</a>
       </Stack>
 
     </Stack>
